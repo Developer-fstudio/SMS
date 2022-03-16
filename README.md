@@ -1,4 +1,4 @@
-# nicobusiness
+# NicoBusiness
 
 
 ### Starting
