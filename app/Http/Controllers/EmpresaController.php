@@ -82,6 +82,7 @@ class EmpresaController extends Controller
         $empresa->NIF = $request->get('NIF');
         $empresa->TwilioAccountID = $request->get('TwilioAccountID');
         $empresa->TwilioAccountSecret = $request->get('TwilioAccountSecret');
+        $empresa->TwilioAccountPhone = $request->get('TwilioAccountPhone');
         $empresa->AlticeAccountID = $request->get('AlticeAccountID');
         $empresa->AlticeAccountSecret = $request->get('AlticeAccountSecret');
         $empresa->AlticeUrlApi = $request->get('AlticeUrlApi');

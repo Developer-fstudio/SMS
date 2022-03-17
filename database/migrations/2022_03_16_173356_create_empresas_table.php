@@ -21,7 +21,7 @@ class CreateEmpresasTable extends Migration
             $table->text('photo')->nullable();
             $table->string('TwilioAccountID')->nullable();
             $table->string('TwilioAccountSecret')->nullable();
-            $table->string('TwilioUrlApi')->nullable();
+            $table->string('TwilioAccountPhone')->nullable();
             $table->string('AlticeAccountID')->nullable();
             $table->string('AlticeAccountSecret')->nullable();
             $table->string('AlticeUrlApi')->nullable();            

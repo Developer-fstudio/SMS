@@ -32,6 +32,10 @@
   <h5>Twilio</h5>
   <hr>
   <div class="mb-4">
+    <label for="TwilioAccountPhone" class="form-label">Twilio Phone Number</label>
+    <input id="TwilioAccountPhone" name="TwilioAccountPhone" type="text" class="form-control" value="{{$empresa->TwilioAccountPhone}}">
+  </div>
+  <div class="mb-4">
     <label for="" class="form-label">Twilio Account ID</label>
     <input id="TwilioAccountID" name="TwilioAccountID" type="text" class="form-control" value="{{$empresa->TwilioAccountID}}">
   </div>  
@@ -57,7 +61,7 @@
   </div>
   <hr>
 
-  <a href="/clients" class="btn btn-secondary">Cancelar</a>
+  <a href="javascript:history.back()" class="btn btn-secondary">Cancelar</a>
   <button type="submit" class="btn btn-primary">Guardar</button>  
 </form>
 <hr>

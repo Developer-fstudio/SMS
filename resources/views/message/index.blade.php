@@ -25,7 +25,8 @@
             <td>{{$message->subject}}</td>
             <td>{{$message->message}}</td>
             <td>
-            <a href="/sendMessage/{{ $message->id}}" class="btn btn-success">Enviar</a>
+            <a href="/sendMessageTwilio/{{ $message->id}}" class="btn btn-danger">Enviar Pelo Twilio</a>
+            <hr>
                 <form action="{{ route ('messages.destroy',$message->id)}}" method="POST">
                 
 
