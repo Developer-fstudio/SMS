@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::resource('articulos','App\Http\Controllers\ArticuloController');
 Route::resource('clients','App\Http\Controllers\ClientController');
+Route::resource('empresa','App\Http\Controllers\EmpresaController');
 Route::resource('messages','App\Http\Controllers\MessageController');
 Route::resource('aniversarios','App\Http\Controllers\AniversariosController');
 Route::get('sendMessage/{message}', 'App\Http\Controllers\MessageController@SendMessage');

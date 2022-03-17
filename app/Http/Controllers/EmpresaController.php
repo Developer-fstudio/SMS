@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,9 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $empresa = Empresa::find(1);
+        return view('empresa.index')->with('empresa',$empresa);
+
     }
 
     /**
@@ -69,9 +75,19 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, Empresa $empresa)
     {
-        //
-    }
+        $empresa = Empresa::find($empresa->id);
 
+        $empresa->name = $request->get('name');
+        $empresa->email = $request->get('email');
+        $empresa->NIF = $request->get('NIF');
+        $empresa->TwilioAccountID = $request->get('TwilioAccountID');
+        $empresa->TwilioAccountSecret = $request->get('TwilioAccountSecret');
+        $empresa->AlticeAccountID = $request->get('AlticeAccountID');
+        $empresa->AlticeAccountSecret = $request->get('AlticeAccountSecret');
+        $empresa->AlticeUrlApi = $request->get('AlticeUrlApi');
+        $empresa->save();
+        return redirect('/empresa');
+    }
     /**
      * Remove the specified resource from storage.
      *
