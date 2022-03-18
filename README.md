@@ -2,10 +2,10 @@
 
 
 ### Starting
-- `composer install` or `composer update` [Composer Download Link](https://getcomposer.org/).
-- `npm install` or `npm update` [Node js Download Link](https://nodejs.org/en/)
+- `composer install` ou `composer update` [Composer Download Link](https://getcomposer.org/).
+- `npm install` ou `npm update` [Node js Download Link](https://nodejs.org/en/)
 - `php artisan migrate`
-- `php artisan db:seed --class=UserSeeder` # Seed a User With email `exemplo@exemplo.com` and password `exemplo123`
+- `php artisan db:seed` # adiciona o seguinte utilizador email `exemplo@exemplo.com` e password `exemplo123` e uma empresa 
 - `php artisan serve`
 
 
