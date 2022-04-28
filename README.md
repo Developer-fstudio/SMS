@@ -1,11 +1,10 @@
-# NicoBusiness
-
+# nicobusiness
 
 ### Starting
-- `composer install` ou `composer update` [Composer Download Link](https://getcomposer.org/).
-- `npm install` ou `npm update` [Node js Download Link](https://nodejs.org/en/)
+- `composer install` or `composer update` [Composer Download Link](https://getcomposer.org/).
+- `npm install` or `npm update` [Node js Download Link](https://nodejs.org/en/)
+- `cp .env.example .env` (Linux) `xcopy .env.example .env -D` (Windows) Edit .env with your database credentials and create a database to the project.
 - `php artisan migrate`
-- `php artisan db:seed` # adiciona o seguinte utilizador email `exemplo@exemplo.com` e password `exemplo123` e uma empresa 
 - `php artisan serve`
 
 
