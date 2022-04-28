@@ -7,6 +7,8 @@ use App\Models\Message;
 use App\Models\Client;
 use App\Models\MessagesClient;
 use Twilio\Rest\Client as Twilio;
+use App\Models\Empresa;
+
 
 class MessageController extends Controller
 {
@@ -27,13 +29,15 @@ class MessageController extends Controller
     public function SendMessage($id)
     {
         $message = Message::find($id);
+        $empresa = Empresa::find(1);
+
         $messagesClients = MessagesClient::where('message_id',$message->id)->get();
         // CADA EMPRESA (USER) VAI TER AS SUAS CREDENCIAS DO TWILIO
         // var_dump(env('APP_ENV'));
-        //     $twilio_account = $_ENV['TWILIO.ACCOUNT.ID'];
-        //     $twilio_auth = env('TWILIO_AUTH_TOKEN');
+             $twilio_account = $empresa->TwilioAccountID;
+             $twilio_auth = $empresa->TwilioAccountSecret;
         // var_dump($twilio_account,$twilio_auth);
-        // $twilio = new Twilio($twilio_account, $twilio_auth);
+         $twilio = new Twilio($twilio_account, $twilio_auth);
         // var_dump($twilio);
          foreach($messagesClients as $msg){
 
@@ -41,7 +45,35 @@ class MessageController extends Controller
             $twilio->messages->create(
                 $client->phone,
                 array(
-                    'from' => env('TWILIO_NUMBER'),
+                    'from' => $empresa->TwilioAccountPhone,
+                    'body' => $message->message
+                )
+                );
+            }
+            return redirect('/messages');
+
+    }
+    public function SendMessageTwilio($id)
+    {
+        $message = Message::find($id);
+        $empresa = Empresa::find(1);
+
+
+        $messagesClients = MessagesClient::where('message_id',$message->id)->get();
+        // CADA EMPRESA (USER) VAI TER AS SUAS CREDENCIAS DO TWILIO
+        // var_dump(env('APP_ENV'));
+        $twilio_account = $empresa->TwilioAccountID;
+        $twilio_auth = $empresa->TwilioAccountSecret;
+         //var_dump($twilio_account,$twilio_auth);
+         $twilio = new Twilio($twilio_account, $twilio_auth);
+        // var_dump($twilio);
+         foreach($messagesClients as $msg){
+
+        $client = Client::find($msg->client_id);
+            $twilio->messages->create(
+                $client->phone,
+                array(
+                    'from' => $empresa->TwilioAccountPhone,
                     'body' => $message->message
                 )
                 );
