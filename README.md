@@ -4,6 +4,7 @@
 - `composer install` or `composer update` [Composer Download Link](https://getcomposer.org/).
 - `npm install` or `npm update` [Node js Download Link](https://nodejs.org/en/)
 - `cp .env.example .env` (Linux) `copy .env.example .env` (Windows) Edit .env with your database credentials and create a database to the project.
+- `php artisan db:seed` # Seed a User With email `exemplo@exemplo.com` and password `exemplo123` e uma empresa.
 - `php artisan migrate`
 - `php artisan serve`
 
