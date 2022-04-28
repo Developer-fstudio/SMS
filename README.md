@@ -3,7 +3,7 @@
 ### Starting
 - `composer install` or `composer update` [Composer Download Link](https://getcomposer.org/).
 - `npm install` or `npm update` [Node js Download Link](https://nodejs.org/en/)
-- `cp .env.example .env` (Linux) `xcopy .env.example .env -D` (Windows) Edit .env with your database credentials and create a database to the project.
+- `cp .env.example .env` (Linux) `copy .env.example .env` (Windows) Edit .env with your database credentials and create a database to the project.
 - `php artisan migrate`
 - `php artisan serve`
 
