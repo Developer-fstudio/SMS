@@ -53,6 +53,17 @@ class MessageController extends Controller
             return redirect('/messages');
 
     }
+    public function SendMessageExpress($id){        
+        $message = Message::find($id);
+        $empresa = Empresa::find(1);
+
+        
+        $messagesClients = MessagesClient::where('message_id',$message->id)->get();
+
+        $expressClient = $empresa->AlticeAccountID;
+        $expressPassword = $empresa->AlticeAccountSecret;
+        
+    }
     public function SendMessageTwilio($id)
     {
         $message = Message::find($id);

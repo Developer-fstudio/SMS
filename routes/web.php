@@ -25,6 +25,7 @@ Route::resource('messages','App\Http\Controllers\MessageController');
 Route::resource('aniversarios','App\Http\Controllers\AniversariosController');
 Route::get('sendMessage/{message}', 'App\Http\Controllers\MessageController@SendMessage');
 Route::get('sendMessageTwilio/{message}', 'App\Http\Controllers\MessageController@SendMessageTwilio');
+Route::get('sendMessageExpress/{message}', 'App\Http\Controllers\MessageController@SendMessageExpress');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
