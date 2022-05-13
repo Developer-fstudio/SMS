@@ -8,6 +8,7 @@ use App\Models\Client;
 use App\Models\MessagesClient;
 use Twilio\Rest\Client as Twilio;
 use App\Models\Empresa;
+use SoapClient;
 
 
 function console_log( $data ){
@@ -66,13 +67,17 @@ class MessageController extends Controller
 
         
         $messagesClients = MessagesClient::where('message_id',$message->id)->get();
-        $expressApiUrl = $empresa->AlticeUrlApi;
-        if(!$expressApiUrl){
-            $expressApiUrl = 'https://smsexpressteste.cloud.altice-empresas.pt/smsexpress-wsdl/SubmissionManager2.wsdl2';
-        }
+        
         $expressClient = $empresa->AlticeAccountID;
         $expressPassword = $empresa->AlticeAccountSecret;
-        
+        $options = array(
+            'application' => 'NicoBusiness',
+            'username' => $expressClient,
+            'password' => $expressPassword,
+       );
+        $soapClient = new \SoapClient($expressApiUrl,$options);
+
+        console_log($soapClient);
 
 
         
