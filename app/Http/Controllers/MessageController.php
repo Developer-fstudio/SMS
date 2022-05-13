@@ -10,6 +10,13 @@ use Twilio\Rest\Client as Twilio;
 use App\Models\Empresa;
 
 
+function console_log( $data ){
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
+
+
 class MessageController extends Controller
 {
      public function __construct(){
@@ -59,9 +66,15 @@ class MessageController extends Controller
 
         
         $messagesClients = MessagesClient::where('message_id',$message->id)->get();
-
+        $expressApiUrl = $empresa->AlticeUrlApi;
+        if(!$expressApiUrl){
+            $expressApiUrl = 'https://smsexpressteste.cloud.altice-empresas.pt/smsexpress-wsdl/SubmissionManager2.wsdl2';
+        }
         $expressClient = $empresa->AlticeAccountID;
         $expressPassword = $empresa->AlticeAccountSecret;
+        
+
+
         
     }
     public function SendMessageTwilio($id)
