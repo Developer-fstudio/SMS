@@ -8,7 +8,7 @@ use App\Models\Client;
 use App\Models\MessagesClient;
 use Twilio\Rest\Client as Twilio;
 use App\Models\Empresa;
-use SoapClient;
+
 
 
 function console_log( $data ){
@@ -68,6 +68,7 @@ class MessageController extends Controller
         
         $messagesClients = MessagesClient::where('message_id',$message->id)->get();
         
+        $expressApiUrl = env('APP_URL') . '/docs/SubmissionManager2.wsdl';
         $expressClient = $empresa->AlticeAccountID;
         $expressPassword = $empresa->AlticeAccountSecret;
         $options = array(
@@ -75,9 +76,17 @@ class MessageController extends Controller
             'username' => $expressClient,
             'password' => $expressPassword,
        );
-        $soapClient = new \SoapClient($expressApiUrl,$options);
+       $soap = new SoapClient($expressApiUrl, [
+        # This array and its values are optional
+        'soap_version' => SOAP_1_2,
+        'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
+        'cache_wsdl' => WSDL_CACHE_BOTH,
+        # Helps with debugging
+        'trace' => TRUE,
+        'exceptions' => TRUE
+    ]);
 
-        console_log($soapClient);
+        // console_log($soapClient);
 
 
         
