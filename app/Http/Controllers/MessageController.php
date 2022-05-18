@@ -8,6 +8,8 @@ use App\Models\Client;
 use App\Models\MessagesClient;
 use Twilio\Rest\Client as Twilio;
 use App\Models\Empresa;
+use SoapClient;
+ use SoapHeader;
 
 
 
@@ -76,21 +78,29 @@ class MessageController extends Controller
             'username' => $expressClient,
             'password' => $expressPassword,
        );
-       $soap = new SoapClient($expressApiUrl, [
-        # This array and its values are optional
-        'soap_version' => SOAP_1_2,
-        'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-        'cache_wsdl' => WSDL_CACHE_BOTH,
-        # Helps with debugging
-        'trace' => TRUE,
-        'exceptions' => TRUE
-    ]);
 
-        // console_log($soapClient);
+            $soap = new SoapClient('https://smsexpress.cloud.altice-empresas.pt/smsexpress-wsdl/SubmissionManager2.wsdl');
+            $header = new SoapHeader('https://smsexpress.cloud.altice-empresas.pt/webservices-smsexpress/SubmissionManager2', 'AuthHeader', $options);
+            $soap->__setSoapHeaders($header);
+            $RESULT = $soap->__getFunctions();
+            console_log($RESULT);
+            $recipients = array('913502523');
+            $my_method_parameter = array(
+                'message' => 'NicoBusiness',
+                'link' => 'www.google.com',
+                'recipients' => $recipients,
+                'sender' => 'Niko',
+                'notification' => 'false',
+                'validity' => 1
 
+           );
+            $soapResponse = $soap->sendWapPushSubmission($options,$my_method_parameter);
+ 
+            print_r($soapResponse);
 
-        
     }
+ 
+
     public function SendMessageTwilio($id)
     {
         $message = Message::find($id);
