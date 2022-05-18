@@ -63,13 +63,13 @@ class MessageController extends Controller
             return redirect('/messages');
 
     }
-    public function SendMessageExpress($id){        
+    public function SendMessageExpress($id){
         $message = Message::find($id);
         $empresa = Empresa::find(1);
 
-        
+
         $messagesClients = MessagesClient::where('message_id',$message->id)->get();
-        
+
         $expressApiUrl = env('APP_URL') . '/docs/SubmissionManager2.wsdl';
         $expressClient = $empresa->AlticeAccountID;
         $expressPassword = $empresa->AlticeAccountSecret;
@@ -78,7 +78,7 @@ class MessageController extends Controller
             'username' => $expressClient,
             'password' => $expressPassword,
        );
-
+            try {
             $soap = new SoapClient('https://smsexpress.cloud.altice-empresas.pt/smsexpress-wsdl/SubmissionManager2.wsdl');
             $header = new SoapHeader('https://smsexpress.cloud.altice-empresas.pt/webservices-smsexpress/SubmissionManager2', 'AuthHeader', $options);
             $soap->__setSoapHeaders($header);
@@ -95,11 +95,14 @@ class MessageController extends Controller
 
            );
             $soapResponse = $soap->sendWapPushSubmission($options,$my_method_parameter);
- 
+        }catch (\Exception $e){
+            console_log($e);
+        }
+
             print_r($soapResponse);
 
     }
- 
+
 
     public function SendMessageTwilio($id)
     {

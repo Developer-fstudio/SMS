@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "czim/laravel-service": "^2.0",
+        "econea/nusoap": "^0.9.12",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "jeroennoten/laravel-adminlte": "^3.5",
@@ -18,7 +19,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
-        "twilio/sdk": "^6.0"
+        "twilio/sdk": "^6.37"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
