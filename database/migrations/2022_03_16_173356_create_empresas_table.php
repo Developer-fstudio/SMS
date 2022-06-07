@@ -19,12 +19,14 @@ class CreateEmpresasTable extends Migration
             $table->string('email');
             $table->string('NIF')->nullable();
             $table->text('photo')->nullable();
+            $table->boolean('IsTwilioActive')->default(true);
             $table->string('TwilioAccountID')->nullable();
             $table->string('TwilioAccountSecret')->nullable();
             $table->string('TwilioAccountPhone')->nullable();
+            $table->boolean('IsAlticeActive')->default(false);
             $table->string('AlticeAccountID')->nullable();
             $table->string('AlticeAccountSecret')->nullable();
-            $table->string('AlticeUrlApi')->nullable();            
+            $table->string('AlticeUrlApi')->nullable();
             $table->timestamps();
         });
     }
