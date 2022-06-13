@@ -262,7 +262,7 @@ return [
             'label'       => '',
             'label_color' => 'warning',
         ],
-        
+
         [
             'text'        => 'Aniversarios',
             'url'         => 'aniversarios',

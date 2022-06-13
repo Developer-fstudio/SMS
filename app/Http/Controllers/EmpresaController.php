@@ -80,6 +80,16 @@ class EmpresaController extends Controller
         $empresa->name = $request->get('name');
         $empresa->email = $request->get('email');
         $empresa->NIF = $request->get('NIF');
+        if ($request->get('IsTwilioActive')==='on') {
+            $empresa->IsTwilioActive = 1;
+        }else {
+            $empresa->IsTwilioActive = 0;
+        }
+        if ($request->get('IsAlticeActive')==='on') {
+            $empresa->IsAlticeActive = 1;
+        }else {
+            $empresa->IsAlticeActive = 0;
+        }
         $empresa->TwilioAccountID = $request->get('TwilioAccountID');
         $empresa->TwilioAccountSecret = $request->get('TwilioAccountSecret');
         $empresa->TwilioAccountPhone = $request->get('TwilioAccountPhone');
@@ -87,6 +97,7 @@ class EmpresaController extends Controller
         $empresa->AlticeAccountSecret = $request->get('AlticeAccountSecret');
         $empresa->AlticeUrlApi = $request->get('AlticeUrlApi');
         $empresa->save();
+
         return redirect('/empresa');
     }
     /**

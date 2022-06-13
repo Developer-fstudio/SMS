@@ -24,12 +24,17 @@
   <div class="mb-4">
     <label for="NIF" class="form-label">NIF</label>
     <input id="NIF" name="NIF" type="text" class="form-control" value="{{$empresa->NIF}}">
-  </div>  
+  </div>
   <hr>
   <h4>Definições de envio de Mensagens (Serviços)</h4>
   <hr>
 
-  <h5>Twilio</h5>
+  <div class="ui checkbox">
+    <h2>Twilio
+        <input type="checkbox" tabindex="0" class="hidden" id="IsTwilioActive" name="IsTwilioActive" @checked(old('active', $empresa->IsTwilioActive))>
+    </h2>
+  </div>
+
   <hr>
   <div class="mb-4">
     <label for="TwilioAccountPhone" class="form-label">Twilio Phone Number</label>
@@ -38,23 +43,27 @@
   <div class="mb-4">
     <label for="TwilioAccountID" class="form-label">Twilio Account ID</label>
     <input id="TwilioAccountID" name="TwilioAccountID" type="text" class="form-control" value="{{$empresa->TwilioAccountID}}">
-  </div>  
+  </div>
   <div class="mb-4">
     <label for="TwilioAccountSecret" class="form-label">Twilio Account Secret</label>
     <input id="TwilioAccountSecret" name="TwilioAccountSecret" type="password" class="form-control" value="{{$empresa->TwilioAccountSecret}}">
   </div>
   <hr>
 
-  <h5>Altice</h5>
-  <hr>  
+  <div class="ui checkbox">
+    <h2>Sms Express
+        <input type="checkbox" tabindex="0" class="hidden" id="IsAlticeActive" name="IsAlticeActive" @checked(old('active', $empresa->IsAlticeActive))>
+    </h2>
+  </div>
+  <hr>
   <div class="mb-4">
     <label for="AlticeUrlApi" class="form-label">Altice Api Url</label>
     <input id="AlticeUrlApi" name="AlticeUrlApi" type="text" class="form-control" value="{{$empresa->AlticeUrlApi}}">
-  </div>  
+  </div>
   <div class="mb-4">
     <label for="AlticeAccountID" class="form-label">Altice Account ID</label>
     <input id="AlticeAccountID" name="AlticeAccountID" type="text" class="form-control" value="{{$empresa->AlticeAccountID}}">
-  </div>  
+  </div>
   <div class="mb-4">
     <label for="AlticeAccountSecret" class="form-label">Altice Account Secret</label>
     <input id="AlticeAccountSecret" name="AlticeAccountSecret" type="password" class="form-control" value="{{$empresa->AlticeAccountSecret}}">
@@ -62,7 +71,7 @@
   <hr>
 
   <a href="javascript:history.back()" class="btn btn-secondary">Cancelar</a>
-  <button type="submit" class="btn btn-primary">Guardar</button>  
+  <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 <hr>
 @stop

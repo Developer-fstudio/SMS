@@ -1210,7 +1210,7 @@
   var SELECTOR_TAB_EMPTY = SELECTOR_TAB_CONTENT + " .tab-empty";
   var SELECTOR_TAB_LOADING = SELECTOR_TAB_CONTENT + " .tab-loading";
   var SELECTOR_TAB_PANE = SELECTOR_TAB_CONTENT + " .tab-pane";
-  var SELECTOR_SIDEBAR_MENU_ITEM = '.main-sidebar .nav-item > a.nav-link';
+  var SELECTOR_SIDEBAR_MENU_ITEM = '.main-sidebar .nav-item > a.nav-link > .content-wrapper';
   var SELECTOR_SIDEBAR_SEARCH_ITEM = '.sidebar-search-results .list-group-item';
   var SELECTOR_HEADER_MENU_ITEM = '.main-header .nav-item a.nav-link';
   var SELECTOR_HEADER_DROPDOWN_ITEM = '.main-header a.dropdown-item';
