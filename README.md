@@ -1,5 +1,6 @@
 # nicobusiness
-
+### Versions
+php - 8.1
 ### Starting
 - `composer install` or `composer update` [Composer Download Link](https://getcomposer.org/).
 - `npm install` or `npm update` [Node js Download Link](https://nodejs.org/en/)
