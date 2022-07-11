@@ -17,10 +17,18 @@
   <div class="mb-4">
     <label for="phone" class="form-label">Telefone</label>
     <input id="phone" name="phone" type="text" class="form-control" value="{{$client->phone}}" required>
-  </div>  
+  </div>
   <div class="mb-4">
     <label for="dataNascimento" class="form-label">Data de Nascimento</label>
     <input type='date' name="dataNascimento" class="form-control" id='dataNascimento' value="{{$client->dataNascimento}}" required>
+  </div>
+  <div class="mb-4">
+    <label for="email" class="form-label">Email</label>
+    <input type='email' name="email" class="form-control" id='email' value="{{$client->email}}" required>
+  </div>
+  <div class="mb-4">
+    <label for="NIF" class="form-label">NIF</label>
+    <input type='number' name="NIF" class="form-control" id='NIF' value="{{$client->NIF}}" required>
   </div>
   <div class="mb-4">
     <label for="gernder">Example select</label>

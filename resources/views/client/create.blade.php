@@ -23,6 +23,14 @@
     <input type='date' name="dataNascimento" class="form-control" id='dataNascimento' required>
   </div>
   <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type='email' name="email" class="form-control" id='email' required>
+  </div>
+  <div class="mb-3">
+    <label for="NIF" class="form-label">NIF</label>
+    <input type='number' name="NIF" class="form-control" id='NIF' required>
+  </div>
+  <div class="mb-3">
       <label for="gernder">Genero</label>
     <select class="form-control" name="gender" id="gender">
       <option id="gender" value="0">Feminino</option>

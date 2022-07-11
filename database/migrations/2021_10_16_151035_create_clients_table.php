@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('phone');
             $table->string('email')->nullable();
             $table->boolean('gender')->nullable()->default(false);//1-Masculino  0-Feminino
-            $table->string('NIF')->nullable()->default();
+            $table->string('NIF')->nullable()->default('');
             $table->string('filho')->nullable();
              $table->date('dataNascimento');
             $table->timestamps();

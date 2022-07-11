@@ -25,7 +25,8 @@
 <table id="clients" class="table table-striped table-bordered shadow-lg mt-4" style="width:100%">
     <thead class="bg-primary text-white">
         <tr>
-            <th scope="col">Enviar</th>
+            <th scope="col">Enviar <input id='checkall' name='checkall' type="checkbox" class="form-control" tabindex="1">
+            </th>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Telemovel</th>
@@ -66,4 +67,15 @@
 @stop
 
 @section('js')
+<script>
+    $(function() {
+    $('#checkall').click(function() {
+        @foreach ($clients as $client)
+        var ch = {{ $client->id }}
+        $('#'+ch).prop('checked', this.checked);
+        @endforeach
+    });
+});
+</script>
+
 @stop

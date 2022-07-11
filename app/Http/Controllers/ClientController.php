@@ -45,6 +45,9 @@ class ClientController extends Controller
         $clients->phone = $request->get('phone');
         $clients->gender = $request->get('gender');
         $clients->dataNascimento = $request->get('dataNascimento');
+        $clients->email = $request->get('email');
+        $clients->NIF = $request->get('NIF');
+
 
         $clients->save();
 
@@ -90,6 +93,9 @@ class ClientController extends Controller
 
         $client->phone = $request->get('phone');
         $client->gender = $request->get('gender');
+        $client->dataNascimento = $request->get('dataNascimento');
+        $client->email = $request->get('email');
+        $client->NIF = $request->get('NIF');
 
         $client->save();
         // dd($client);
