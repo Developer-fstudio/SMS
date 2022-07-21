@@ -10,28 +10,51 @@
 
 <form action="/clients" method="POST">
   @csrf
-  <div class="mb-3">
+  <div class="row">
+    <div class="col">
+  <div class="mb-4">
     <label for="name" class="form-label">Nome</label>
-    <input id="name" name="name" type="text" class="form-control" tabindex="1" required>
+    <input id="name" name="name" type="text" class="form-control"  required>
   </div>
-  <div class="mb-3">
-    <label for="phone" class="form-label">Telemovel</label>
-    <input id="phone" name="phone" type="text" class="form-control" tabindex="2" required>
+    </div>
+    <div class="col">
+
+  <div class="mb-4">
+    <label for="phone" class="form-label">Telefone</label>
+    <input id="phone" name="phone" type="text" class="form-control" required>
   </div>
-  <div class="mb-3">
-    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-    <input type='date' name="dataNascimento" class="form-control" id='dataNascimento' required>
-  </div>
-  <div class="mb-3">
+   </div>
+</div>
+  <div class="row">
+    <div class="col">
+    <div class="mb-4">
     <label for="email" class="form-label">Email</label>
-    <input type='email' name="email" class="form-control" id='email' required>
+    <input type='email' name="email" class="form-control" id='email'  required>
   </div>
-  <div class="mb-3">
+    </div>
+        <div class="col">
+  <div class="mb-4">
     <label for="NIF" class="form-label">NIF</label>
     <input type='number' name="NIF" class="form-control" id='NIF' required>
   </div>
+        </div>
+  </div>
+  <div class="row">
+    <div class="col">
   <div class="mb-3">
-      <label for="gernder">Genero</label>
+    <label for="filho" class="form-label">Nome do Filho</label>
+    <input id="filho" name="filho" type="text"  class="form-control" tabindex="1" required>
+  </div>
+    </div>
+    <div class="col">
+  <div class="mb-4">
+    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+    <input type='date' name="dataNascimento" class="form-control" id='dataNascimento' required>
+  </div>
+    </div>
+  </div>
+  <div class="mb-3">
+      <label for="gernder">Género</label>
     <select class="form-control" name="gender" id="gender">
       <option id="gender" value="0">Feminino</option>
       <option id="gender" value="1">Masculino</option>

@@ -33,7 +33,10 @@ class MessageController extends Controller
     public function index()
     {
         $messages = Message::all();
-        return view('message.index')->with('messages',$messages);
+        $empresa = Empresa::find(1);
+        $IsTwilioActive = $empresa->IsTwilioActive;
+        $IsAlticeActive = $empresa->IsAlticeActive;
+        return view('message.index')->with(compact('messages','IsAlticeActive','IsTwilioActive'));
     }
 
     public function SendMessage($id)

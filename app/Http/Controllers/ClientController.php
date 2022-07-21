@@ -47,6 +47,8 @@ class ClientController extends Controller
         $clients->dataNascimento = $request->get('dataNascimento');
         $clients->email = $request->get('email');
         $clients->NIF = $request->get('NIF');
+        $clients->filho = $request->get('filho');
+
 
 
         $clients->save();
@@ -96,6 +98,8 @@ class ClientController extends Controller
         $client->dataNascimento = $request->get('dataNascimento');
         $client->email = $request->get('email');
         $client->NIF = $request->get('NIF');
+        $client->filho = $request->get('filho');
+
 
         $client->save();
         // dd($client);
