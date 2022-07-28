@@ -20,7 +20,7 @@
 
 @section('content')
 <div id="calendar"></div>
-<?php echo  json_encode($dataAr) ?>
+<?php //echo  json_encode($dataAr) ?>
 
 
 @stop

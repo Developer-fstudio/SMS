@@ -15,6 +15,7 @@
             <th scope="col">ID</th>
             <th scope="col">Assunto</th>
             <th scope="col">Mensagem</th>
+            <th scope="col">Serviços de Mensagem</th>
             <th scope="col">Opções</th>
         </tr>
     </thead>
@@ -25,21 +26,20 @@
             <td>{{$message->subject}}</td>
             <td>{{$message->message}}</td>
             <td>
-                @if ($IsTwilioActive === 1)
-            <a href="/sendMessageTwilio/{{ $message->id}}" class="btn btn-danger">Enviar Pelo Twilio</a>
-            @endif
-            @if ($IsAlticeActive === 1)
+                        @if ($IsTwilioActive === 1)
+                        <a href="/sendMessageTwilio/{{ $message->id}}" class="btn btn-danger">Enviar Pelo Twilio</a>
+                        @endif
+                        @if ($IsAlticeActive === 1)
             <a href="/sendMessageExpress/{{ $message->id}}" class="btn btn-primary">Enviar Pelo SMS Express</a>
             @endif
-            <hr>
-                <form action="{{ route ('messages.destroy',$message->id)}}" method="POST">
-
-
-                <a href="/messages/{{ $message->id}}/edit" class="btn btn-info">Editar</a>
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
+                </td>
+                <td>
+                            <form action="{{ route ('messages.destroy',$message->id)}}" method="POST">
+                            <a href="/messages/{{ $message->id}}/edit" class="btn btn-info">Editar</a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
             </td>
         </tr>
         @endforeach
