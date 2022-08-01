@@ -66,6 +66,7 @@ class MessageController extends Controller
             return redirect('/messages');
 
     }
+
     public function SendMessageExpress($id){
         $message = Message::find($id);
         $empresa = Empresa::find(1);
@@ -133,6 +134,26 @@ class MessageController extends Controller
                 );
             }
             return redirect('/messages');
+
+    }
+
+    public function TwilioMessage($phone,$msg)
+    {
+        $empresa = Empresa::find(1);
+
+
+        $twilio_account = $empresa->TwilioAccountID;
+        $twilio_auth = $empresa->TwilioAccountSecret;
+         //var_dump($twilio_account,$twilio_auth);
+         $twilio = new Twilio($twilio_account, $twilio_auth);
+        // var_dump($twilio);
+            $twilio->messages->create(
+                $phone,
+                array(
+                    'from' => $empresa->TwilioAccountPhone,
+                    'body' => $msg
+                )
+                );
 
     }
 
