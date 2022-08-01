@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use App\Http\Controllers\MessageController as Message;
+use App\Models\Empresa;
+
 
 
 
@@ -66,5 +69,28 @@ class AniversariosController extends Controller
 
         }
         return view('aniversarios.index',compact('dataAr'));
+    }
+
+    static public function AniversariosMsg()
+    {
+
+        $empresa = Empresa::find(1);
+        $clients = Client::all();
+        foreach ($clients as $client){
+            $dias = countdays($client->dataNascimento);
+            settype($dias,'string');
+            var_dump($dias);
+            if ($dias === '5'){
+                if ($empresa->IsTwilioActive === 1){
+                    var_dump($client->phone,true);
+                       Message::TwilioMessage($client->phone,'teste aniversario');
+                    }
+                if ($empresa->IsAlticeActive === 1){
+                     }
+            }
+            else {
+                var_dump($client->phone,false);
+            }
+        }
     }
 }

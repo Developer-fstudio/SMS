@@ -55,13 +55,14 @@ class MessageController extends Controller
          foreach($messagesClients as $msg){
 
         $client = Client::find($msg->client_id);
-            $twilio->messages->create(
+            $message = $twilio->messages->create(
                 $client->phone,
                 array(
                     'from' => $empresa->TwilioAccountPhone,
                     'body' => $message->message
                 )
                 );
+            var_dump($message->sid);
             }
             return redirect('/messages');
 
@@ -137,7 +138,7 @@ class MessageController extends Controller
 
     }
 
-    public function TwilioMessage($phone,$msg)
+    static public function TwilioMessage($phone,$msg)
     {
         $empresa = Empresa::find(1);
 
