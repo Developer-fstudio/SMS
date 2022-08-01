@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Models\Empresa;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,8 +25,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+
+        $empresa = Empresa::find(1);
         // $schedule->command('inspire')->hourly();
-        $schedule->command('Aniversarios:msg')->everyMinute();
+    $schedule->command('Aniversarios:msg')->dailyAt('09:00'/*$empresa->horaMsgAniversario*/);
     }
 
     /**
