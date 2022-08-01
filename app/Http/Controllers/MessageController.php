@@ -148,14 +148,17 @@ class MessageController extends Controller
          //var_dump($twilio_account,$twilio_auth);
          $twilio = new Twilio($twilio_account, $twilio_auth);
         // var_dump($twilio);
-            $twilio->messages->create(
+            $message = $twilio->messages->create(
                 $phone,
                 array(
                     'from' => $empresa->TwilioAccountPhone,
-                    'body' => $msg
+                    'body' => $msg,
+                    "statusCallback" => 'https://www.toptal.com/developers/postbin/1659356697729-1670635049231'
+                    //https://www.toptal.com/developers/postbin/b/1659356697729-1670635049231 ver callback
                 )
                 );
 
+            var_dump($message->sid);
     }
 
     /**
