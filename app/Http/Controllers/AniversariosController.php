@@ -83,7 +83,7 @@ class AniversariosController extends Controller
             if ($dias === '5'){
                 if ($empresa->IsTwilioActive === 1){
                     var_dump($client->phone,true);
-                       Message::TwilioMessage($client->phone,'teste aniversario');
+                       Message::TwilioMessage($client->phone,$empresa->MsgAniversario);
                     }
                 if ($empresa->IsAlticeActive === 1){
                      }

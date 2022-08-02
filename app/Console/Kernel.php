@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        \App\Console\Commands\MsgAniverarios::class,
         //
     ];
 
@@ -28,7 +29,7 @@ class Kernel extends ConsoleKernel
 
         $empresa = Empresa::find(1);
         // $schedule->command('inspire')->hourly();
-    $schedule->command('Aniversarios:msg')->dailyAt('09:00'/*$empresa->horaMsgAniversario*/);
+    $schedule->command('Aniversarios:msg')->dailyAt($empresa->horaMsgAniversario);
     }
 
     /**

@@ -27,6 +27,8 @@ class CreateEmpresasTable extends Migration
             $table->string('AlticeAccountID')->nullable();
             $table->string('AlticeAccountSecret')->nullable();
             $table->string('AlticeUrlApi')->nullable();
+            $table->string('horaMsgAniversario')->default('09:00');
+            $table->string('MsgAniversario')->default('Parabens');
             $table->timestamps();
         });
     }
