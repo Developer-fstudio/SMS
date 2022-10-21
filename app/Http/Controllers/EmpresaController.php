@@ -90,6 +90,8 @@ class EmpresaController extends Controller
         }else {
             $empresa->IsAlticeActive = 0;
         }
+        $empresa->horaMsgAniversario = $request->get('horaMsgAniversario');
+        $empresa->MsgAniversario = $request->get('MsgAniversario');
         $empresa->TwilioAccountID = $request->get('TwilioAccountID');
         $empresa->TwilioAccountSecret = $request->get('TwilioAccountSecret');
         $empresa->TwilioAccountPhone = $request->get('TwilioAccountPhone');

@@ -26,9 +26,25 @@
     <input id="NIF" name="NIF" type="text" class="form-control" value="{{$empresa->NIF}}">
   </div>
   <hr>
-  <h4>Definições de envio de Mensagens (Serviços)</h4>
+  <h4>Definições de envio de Mensagens</h4>
   <hr>
 
+  <div>
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <label for="MsgAniversario" class="form-label">Mensagem de texto do aniversario</label>
+            <input id="MsgAniversario" name="MsgAniversario" type="text" class="form-control" value="{{$empresa->MsgAniversario}}">
+          </div>
+          <div class="col">
+            <label for="horaMsgAniversario" class="form-label">Horário da Mensagem</label>
+            <input id="horaMsgAniversario" name="horaMsgAniversario" type="time" class="form-control" value="{{$empresa->horaMsgAniversario}}">
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <hr>
   <div class="ui checkbox">
     <h2>Twilio
         <input type="checkbox" tabindex="0" class="hidden" id="IsTwilioActive" name="IsTwilioActive" @checked(old('active', $empresa->IsTwilioActive))>
@@ -69,9 +85,10 @@
     <input id="AlticeAccountSecret" name="AlticeAccountSecret" type="password" class="form-control" value="{{$empresa->AlticeAccountSecret}}">
   </div>
   <hr>
-
+  <div class="right">
   <a href="javascript:history.back()" class="btn btn-secondary">Cancelar</a>
   <button type="submit" class="btn btn-primary">Guardar</button>
+  </div>
 </form>
 <hr>
 @stop
