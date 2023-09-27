@@ -22,7 +22,7 @@ php - 8.1
 ![Create](/screenshots/empresa.png?raw=true "Empresa")
 ![List](/screenshots/user.png?raw=true "perfil de utilizador")
 ### aniversarios
-![Create](/screenshots/aniversarios.png?raw=true "Aniversarios")
+![Create](/screenshots/aniversario.png?raw=true "Aniversarios")
 
 
 
