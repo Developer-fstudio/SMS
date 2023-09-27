@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'NicoBusiness',
+    'title' => 'SMS',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-s',
-    'logo_img_alt' => 'NicoBusiness',
+    'logo_img_alt' => 'SMS',
 
     /*
     |--------------------------------------------------------------------------

@@ -79,7 +79,7 @@ class MessageController extends Controller
         $expressClient = $empresa->AlticeAccountID;
         $expressPassword = $empresa->AlticeAccountSecret;
         $options = array(
-            'application' => 'NicoBusiness',
+            'application' => 'SMS',
             'username' => $expressClient,
             'password' => $expressPassword,
        );
@@ -91,7 +91,7 @@ class MessageController extends Controller
             console_log($RESULT);
             $recipients = array('913502523');
             $my_method_parameter = array(
-                'message' => 'NicoBusiness',
+                'message' => 'SMS',
                 'link' => 'www.google.com',
                 'recipients' => $recipients,
                 'sender' => 'Niko',

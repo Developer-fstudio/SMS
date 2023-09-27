@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'NicoBusiness')
+@section('title', 'SMS')
 
 @section('content_header')
    <h1>Criar Novo Mensagem</h1>
