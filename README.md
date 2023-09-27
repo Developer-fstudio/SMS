@@ -9,12 +9,20 @@ php - 8.1
 - `php artisan db:seed` # Seed a User With email `exemplo@exemplo.com` and password `exemplo123` e uma empresa.
 - `php artisan serve`
 
-### Screenshots
+## Screenshots
 
 ![Login](/screenshots/login.png?raw=true "Login")
-## Clients
+### Clients
 ![Create](/screenshots/create_cliente.png?raw=true "Criar Cliente")
 ![List](/screenshots/list_cliente.png?raw=true "Lista Cliente")
+### Mensagens
+![Create](/screenshots/create_msg.png?raw=true "Criar Mensagem")
+![List](/screenshots/list_msg.png?raw=true "Lista Mensagem")
+### User
+![Create](/screenshots/empresa.png?raw=true "Empresa")
+![List](/screenshots/user.png?raw=true "perfil de utilizador")
+### aniversarios
+![Create](/screenshots/aniversarios.png?raw=true "Aniversarios")
 
 
 
